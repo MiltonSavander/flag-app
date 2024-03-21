@@ -6,6 +6,7 @@ import './Navbar.css';
 
 const Header = ({ theme, setTheme }) => {
   const logoSrc = theme === 'dark' ? techoverLogo : techoverLogoDark;
+  const buttontext = theme === 'dark' ? 'DARK MODE' : 'LIGHT MODE';
 
   return (
     <header>
@@ -14,7 +15,7 @@ const Header = ({ theme, setTheme }) => {
         <img src={logoSrc} alt="techover-logo" className="techover-logo" />
         <IconLabelButtons
           startIcon={<BrightnessHighIcon />}
-          text="darkmode"
+          text={buttontext}
           theme={theme}
           setTheme={setTheme}
         />
