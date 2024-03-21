@@ -1,0 +1,20 @@
+import * as React from 'react';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
+import { Link } from 'react-router-dom';
+import './ClickableCips.css';
+
+export default function ClickableChips({ chip }) {
+  // const style = {
+  //   backgroundColor: '#444e56',
+  //   color: 'white',
+  // };
+
+  return (
+    <Stack direction="row" spacing={1}>
+      <Link to={'/country/' + chip}>
+        <Chip className="chip" label={chip} />
+      </Link>
+    </Stack>
+  );
+}

@@ -1,7 +1,9 @@
 header {
   width: 100%;
-  background-color: #2B3844;
+  background-color: var(--primary);
+  color: var(--text);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 .header-container {
@@ -26,4 +28,8 @@ h2 {
 
 .theme-logo {
   width: 25px;
+}
+
+.theme-button {
+  color: var(--text) !important;
 }

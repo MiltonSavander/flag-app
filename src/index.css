@@ -3,24 +3,44 @@
   margin: 0;
 }
 
+
 :root {
   font-family: "Roboto", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
+  --primary: #3e4a55;
+  --secondary: #202C36;
+  --text: #F2F2F2;
+  --text-secondary: #ffffffa1;
+  --chip-color: #444e56;
 
-  color-scheme: light dark;
-  color: white;
-  background-color: #202C36;
+
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --blå: #2B3844;
-  --mörkBlå: #202C36;
-  --vit: #F2F2F2;
 
 }
+
+.ligth-theme {
+  --primary: #ffffff;
+  --secondary: #fbfbfb;
+  --text: #000000;
+  --text-secondary: #000000a1;
+  --chip-color: #ebebeb;
+}
+
+body {
+  color-scheme: light dark;
+  color: var(--text);
+  background-color: var(--secondary);
+}
+
+
+
+
+
 
 
 
@@ -29,12 +49,3 @@
     color: #213547;
     background-color: #ffffff;
   }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
-} */

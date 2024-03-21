@@ -1,19 +1,24 @@
 import IconLabelButtons from './IconLabelButtons';
+import BrightnessHighIcon from '@mui/icons-material/BrightnessHigh';
 import './Navbar.css';
 
-//Jag vet att det inte är en nav bar men jag orkar inte byta namn på allt
+const Header = ({ theme, setTheme }) => {
+  const logoSrc =
+    theme === 'dark'
+      ? '/src/assets/techover-logo.png'
+      : '/src/assets/techover-logo-dark.png';
 
-const Header = () => {
   return (
     <header>
       <div className="header-container">
         <h2 className="app-name">The Flag App</h2>
-        <img
-          src="/src/assets/techover-logo.png"
-          alt="techover-logo"
-          className="techover-logo"
+        <img src={logoSrc} alt="techover-logo" className="techover-logo" />
+        <IconLabelButtons
+          startIcon={<BrightnessHighIcon />}
+          text="darkmode"
+          theme={theme}
+          setTheme={setTheme}
         />
-        <IconLabelButtons />
       </div>
     </header>
   );
