@@ -5,7 +5,7 @@ import techoverLogoDark from '../assets/techover-logo-dark.png';
 import './Navbar.css';
 
 const Header = ({ theme, setTheme }) => {
-  const logoSrc = theme === 'dark' ? techoverLogoDark : techoverLogo;
+  const logoSrc = theme === 'dark' ? techoverLogo : techoverLogoDark;
 
   return (
     <header>
