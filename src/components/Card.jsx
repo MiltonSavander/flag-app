@@ -12,7 +12,6 @@ export default function ActionAreaCard({
   population,
   region,
   capital,
-  theme,
 }) {
   if (capital) {
     capital = capital.join(' ');

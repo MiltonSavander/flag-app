@@ -19,6 +19,7 @@ const CountryInfo = () => {
     ? Object.values(country.languages).join(', ')
     : 'N/A';
   const chipArray = country.borders ? country.borders : 'N/A';
+  console.log(country);
 
   return (
     <div className="main-container">
@@ -60,7 +61,7 @@ const CountryInfo = () => {
             <div className="sub-container">
               <div className="info-text-container">
                 <strong>Top Level Domain: </strong>
-                {country.tld.join(' ')}
+                {country.tld ? country.tld.join(' ') : 'N/A'}
               </div>
               <div className="info-text-container">
                 <strong>Currencies: </strong>

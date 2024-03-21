@@ -1,9 +1,8 @@
-import { TextField, ThemeProvider, createTheme } from '@mui/material';
+import { TextField } from '@mui/material';
 import BasicSelect from './BasicSelect';
 import './Searchbox.css';
 
 const Searchbox = ({ region, setRegion, nameFilter, setNameFilter }) => {
-  // Create a custom theme for dark mod
   const hadleTextFieldChange = (event) => {
     setNameFilter(event.target.value);
   };

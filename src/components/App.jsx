@@ -5,8 +5,6 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 
-import { useState } from 'react';
-
 //pages
 import Home from '../pages/Home';
 import CountryInfo, { countryLoader } from '../pages/CountryInfo';

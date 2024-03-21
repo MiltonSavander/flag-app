@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom';
 //components
 import Searchbox from '/src/components/Searchbox';
 import Card from '/src/components/Card';
+import SkeletonCard from '/src/components/SkeletonCard';
 
 function Home({ theme }) {
   const [countrys, setCountry] = useState([]);
   const [region, setRegion] = useState('');
   const [nameFilter, setNameFilter] = useState('');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -44,6 +46,7 @@ function Home({ theme }) {
           country.cca3.toLowerCase().startsWith(nameFilter)
         );
         setCountry(filteredCountries);
+        setLoading(false);
       } catch (error) {
         console.log(error);
       }
@@ -72,17 +75,22 @@ function Home({ theme }) {
             gap: '40px',
           }}
         >
-          {countrys.map((country, i) => {
-            return (
-              <Link
-                key={i}
-                to={'/country/' + country.cca3}
-                style={{ textDecoration: 'none' }}
-              >
-                <Card key={i} {...country} theme={theme} />
-              </Link>
-            );
-          })}
+          {!loading
+            ? countrys.map((country, i) => {
+                return (
+                  <Link
+                    key={i}
+                    to={'/country/' + country.cca3}
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <Card key={i} {...country} theme={theme} />
+                  </Link>
+                );
+              })
+            : Array.from({ length: 12 }).map((_, index) => (
+                <SkeletonCard key={index} />
+              ))}
+          {countrys.length === 0 && <h2>No countries in that region</h2>}
         </div>
       </main>
     </>

@@ -5,11 +5,6 @@ import { Link } from 'react-router-dom';
 import './ClickableCips.css';
 
 export default function ClickableChips({ chip }) {
-  // const style = {
-  //   backgroundColor: '#444e56',
-  //   color: 'white',
-  // };
-
   return (
     <Stack direction="row" spacing={1}>
       <Link to={'/country/' + chip}>

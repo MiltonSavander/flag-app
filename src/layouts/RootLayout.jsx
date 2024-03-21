@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from '/src/components/Navbar';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const Rootlayout = () => {
   const [theme, setTheme] = useState('dark');
