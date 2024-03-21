@@ -1,12 +1,11 @@
 import IconLabelButtons from './IconLabelButtons';
 import BrightnessHighIcon from '@mui/icons-material/BrightnessHigh';
+import techoverLogo from '../assets/techover-logo.png';
+import techoverLogoDark from '../assets/techover-logo-dark.png';
 import './Navbar.css';
 
 const Header = ({ theme, setTheme }) => {
-  const logoSrc =
-    theme === 'dark'
-      ? './src/assets/techover-logo.png'
-      : './src/assets/techover-logo-dark.png';
+  const logoSrc = theme === 'dark' ? techoverLogoDark : techoverLogo;
 
   return (
     <header>
