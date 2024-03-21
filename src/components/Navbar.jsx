@@ -5,8 +5,8 @@ import './Navbar.css';
 const Header = ({ theme, setTheme }) => {
   const logoSrc =
     theme === 'dark'
-      ? '/src/assets/techover-logo.png'
-      : '/src/assets/techover-logo-dark.png';
+      ? './src/assets/techover-logo.png'
+      : './src/assets/techover-logo-dark.png';
 
   return (
     <header>

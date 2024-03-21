@@ -19,7 +19,6 @@ const CountryInfo = () => {
     ? Object.values(country.languages).join(', ')
     : 'N/A';
   const chipArray = country.borders ? country.borders : 'N/A';
-  console.log(country);
 
   return (
     <div className="main-container">
