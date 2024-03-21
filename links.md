@@ -1,0 +1,2 @@
+- [Github repository](https://github.com/MiltonSavander/flag-app)
+- [Deployat projekt](https://flag-app-sigma.vercel.app/)
