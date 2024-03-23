@@ -57,7 +57,7 @@ function Home({ theme }) {
 
   return (
     <>
-      <main>
+      <main style={{ padding: '0 10px' }}>
         <Searchbox
           region={region}
           setRegion={setRegion}
@@ -67,11 +67,11 @@ function Home({ theme }) {
         <div
           className="main-container"
           style={{
-            width: '1200px',
+            maxWidth: '1200px',
             margin: '0 auto',
             display: 'flex',
             flexFlow: 'wrap',
-            justifyContent: 'flex-start',
+            justifyContent: 'center',
             gap: '40px',
           }}
         >

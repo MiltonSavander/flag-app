@@ -4,7 +4,7 @@ import './Searchbox.css';
 
 const Searchbox = ({ region, setRegion, nameFilter, setNameFilter }) => {
   const hadleTextFieldChange = (event) => {
-    setNameFilter(event.target.value);
+    setNameFilter(event.target.value.toLowerCase());
   };
 
   return (
@@ -14,8 +14,7 @@ const Searchbox = ({ region, setRegion, nameFilter, setNameFilter }) => {
         id="outlined-basic"
         label="Search for a county"
         variant="outlined"
-        sx={{ width: '400px' }}
-        value={nameFilter}
+        sx={{ maxWidth: '400px' }}
         onChange={hadleTextFieldChange}
       />
       <BasicSelect
