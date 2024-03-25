@@ -14,7 +14,6 @@ const Searchbox = ({ region, setRegion, nameFilter, setNameFilter }) => {
         id="outlined-basic"
         label="Search for a county"
         variant="outlined"
-        sx={{ maxWidth: '400px' }}
         onChange={hadleTextFieldChange}
       />
       <BasicSelect

@@ -43,7 +43,7 @@ function Home({ theme }) {
         );
 
         const filteredCountries = sortedCountries.filter((country) =>
-          country.cca3.toLowerCase().startsWith(nameFilter)
+          country.countryName.toLowerCase().startsWith(nameFilter)
         );
         setCountry(filteredCountries);
         setLoading(false);
