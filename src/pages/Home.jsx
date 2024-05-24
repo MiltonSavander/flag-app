@@ -17,9 +17,13 @@ function Home({ theme }) {
       try {
         let response;
         if (region === '') {
-          response = await fetch(`https://restcountries.com/v3.1/all`);
+          response = await fetch(
+            `https://restcountries.com/v3.1/all?fields=name,flags,population,region,capital,cca3`
+          );
         } else {
-          response = await fetch(`https://restcountries.com/v3.1/${region}`);
+          response = await fetch(
+            `https://restcountries.com/v3.1/${region}?fields=name,flags,population,region,capital,cca3`
+          );
         }
 
         const json = await response.json();

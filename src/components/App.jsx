@@ -7,7 +7,7 @@ import {
 
 //pages
 import Home from '../pages/Home';
-import CountryInfo, { countryLoader } from '../pages/CountryInfo';
+import CountryInfo from '../pages/CountryInfo';
 
 //layouts
 import Rootlayout from '../layouts/RootLayout';
@@ -16,11 +16,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Rootlayout />}>
       <Route index element={<Home />}></Route>
-      <Route
-        path="country/:id"
-        element={<CountryInfo />}
-        loader={countryLoader}
-      />
+      <Route path="country/:id" element={<CountryInfo />} />
     </Route>
   )
 );

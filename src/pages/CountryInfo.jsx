@@ -1,11 +1,37 @@
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import IconLabelButtons from '/src/components/IconLabelButtons';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ClickableChips from '../components/ClickableCips';
 import './CountryInfo.css';
+import { useEffect, useState } from 'react';
+import SkeletonInfo from '../components/SkeletonInfo';
 
 const CountryInfo = () => {
-  const country = useLoaderData()[0];
+  const { id } = useParams();
+  const [country, setCountry] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchCountry = async () => {
+      try {
+        const response = await fetch(
+          `https://restcountries.com/v3.1/alpha/${id}`
+        );
+        const data = await response.json();
+        setCountry(data[0]);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchCountry();
+  }, [id]);
+
+  if (loading) return <SkeletonInfo />;
+  if (error) return <div>Error: {error.message}</div>;
+  if (!country) return <div>No country data found</div>;
 
   let nativeName = 'N/A';
   if (country.name.nativeName) {
@@ -86,15 +112,6 @@ const CountryInfo = () => {
       </div>
     </div>
   );
-};
-
-export const countryLoader = async ({ params }) => {
-  const { id } = params;
-  const res = await fetch(`https://restcountries.com/v3.1/alpha/${id}`);
-  if (!res.ok) {
-    throw Error(`could not get country with id ${id}`);
-  }
-  return res.json();
 };
 
 export default CountryInfo;

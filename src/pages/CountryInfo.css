@@ -18,7 +18,6 @@ main {
 
 .flag-container {
   width: 545px;
-  height: auto;
 }
 
 .flag-img {
@@ -38,6 +37,7 @@ h1 {
 }
 
 .info-text-container {
+  min-width: 145px;
   margin-bottom: 12px;
 }
 
