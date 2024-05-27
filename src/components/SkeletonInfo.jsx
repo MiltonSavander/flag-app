@@ -79,7 +79,7 @@ export default function SkeletonInfo() {
                 />
               </div>
               <div className="info-text-container">
-                <strong>Language: </strong>performance
+                <strong>Language: </strong>
                 <Skeleton
                   variant="text"
                   width={60}
